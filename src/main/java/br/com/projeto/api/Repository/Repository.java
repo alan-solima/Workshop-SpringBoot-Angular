@@ -1,6 +1,10 @@
 package br.com.projeto.api.Repository;
 
-public interface Repository {
+import org.springframework.data.repository.CrudRepository;
+
+import br.com.projeto.api.Model.Customer;
+
+public interface Repository extends CrudRepository<Customer, Long> {
 
     
 }
