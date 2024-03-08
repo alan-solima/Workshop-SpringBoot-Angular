@@ -1,13 +1,12 @@
 package br.com.projeto.api.Controller;
 
+import br.com.projeto.api.Model.Customer;
+import br.com.projeto.api.Repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import br.com.projeto.api.Model.Customer;
-import br.com.projeto.api.Repository.Repository;
 
 @RestController
 public class Controller {
@@ -21,7 +20,7 @@ public class Controller {
     }
 
     @GetMapping("/")
-    public String teste() {
-        return "Hello world!";
+    public Iterable<Customer> select() {
+        return action.findAll();
     }
 }
